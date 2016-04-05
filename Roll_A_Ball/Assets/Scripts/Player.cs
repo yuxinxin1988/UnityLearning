@@ -24,4 +24,22 @@ public class Player : MonoBehaviour {
         //if (Input.GetKey(KeyCode.D))
         //    transform.localPosition = new Vector3(orgPos.x + step, orgPos.y, orgPos.z);
 	}
+
+    //碰撞检测
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.collider.tag == "PickUp")
+    //    {
+    //        Destroy(collision.collider.gameObject);
+    //    }
+    //}
+
+    void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("OnTriggerEnter");
+        if (collider.tag == "PickUp")
+        {
+            Destroy(collider.gameObject);
+        }
+    }
 }
